@@ -42,7 +42,6 @@ describe Student, "validations" do
   end
 
   before(:each) do
-    # Student.delete_all
     @student = Student.new
     @student.assign_attributes(
       :first_name => "Kreay",
@@ -78,8 +77,7 @@ describe Student, "validations" do
   end
 
   it "shouldn't allow two students with the same email" do
-    another_student = Student.new
-    another_student.create!(
+    another_student = Student.create!(
       :birthday => @student.birthday,
       :email => @student.email,
       :phone => @student.phone
